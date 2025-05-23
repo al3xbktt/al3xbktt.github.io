@@ -1,0 +1,59 @@
+:root {
+  --grid-unit: 1rem;
+  --border-radius-base: 0.5rem;
+  --color-bg: #101827;
+  --color-fg: #221E41;
+  --color-font:#ffffff;
+
+}
+
+@layer reset{
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight:500;
+  }
+
+  img{
+    max-width: 100%;
+    display:block;
+  }
+}
+
+@layer layout{
+  .bento-grid{
+    display:grid;
+    gap:24px;
+  }
+}
+
+[data-theme="dark"] {
+  --color-bg: rgba(16, 24, 39, 1);
+  --color-fg: rgba(34, 30, 65, .5);
+  --color-font:rgba(255, 255, 255, 1);
+  --color-outline: rgba(255, 255, 255, 0.18);
+}
+
+[data-theme="light"] {
+  --color-bg: rgb(206, 206, 206);
+  --color-fg: rgba(236, 238, 239, .5);
+  --color-font:rgba(0, 0, 0, 1);
+  --color-outline: rgba(0, 0, 0, 0.219);
+}
+
+body{
+    background-color: var(--color-bg);
+    font-family: 'Montserrat', sans-serif;
+    height: 95vh;
+    color:var(--color-font);
+}
