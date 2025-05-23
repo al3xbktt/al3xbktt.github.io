@@ -1,21 +1,23 @@
 import './Switch.css';
 
 
-export const loadTheme = (state) => {
+export interface ThemeState {
+  theme: string;
+}
 
-
+export const loadTheme = (state: string): string | undefined => {
     try {
         const serializedState = localStorage.getItem(state);
         if(serializedState === null){
             return undefined;
         }
-        return JSON.parse(serializedState);
+        return JSON.parse(serializedState) as string;
     } catch (err) {
         return undefined;
     }
 };
 
-  const saveTheme = (state) => {
+  const saveTheme = (state: string): string | undefined => {
     try{
         const serializedState = JSON.stringify(state);
         localStorage.setItem('state', serializedState);
