@@ -9,6 +9,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons/faArrowCircleRight';
 import { Link } from '@tanstack/react-router';
+import InteractiveCard from '../assets/InteractiveCard';
 import Popup from 'reactjs-popup';
 
 export const Route = createFileRoute('/')({
@@ -76,10 +77,24 @@ function Index() {
               </div>
               </div>
           <div className="div2">
-            <img src="/images/randim-mockup.png" alt="rand.im" />
+            <InteractiveCard 
+        title="rand.im"
+        imageUrl="/images/randim-mockup.png"
+        link="/randim"
+        borderColor="#242424"
+        textColor="white"
+        className="custom-card-class"
+      />
             </div>
           <div className="div3">
-            <img src="/images/portfolio-mockup.png" alt="portfolio" />
+            <InteractiveCard 
+        title="Portfolio"
+        imageUrl="/images/portfolio-mockup.png"
+        link="/Portfolio"
+        borderColor="#242424"
+        textColor="white"
+        className="custom-card-class"
+      />
             </div> 
 
           <div className="div4">
@@ -125,9 +140,16 @@ function Index() {
             </div>
           </div>
           </div>
-          <div className="div8">             
-            <img src="images/DrillVision-Mockup.png" alt="DrillVision" />
-          </div>
+          <div className="div8">      
+      <InteractiveCard 
+        title="DrillVision"
+        imageUrl="/images/DrillVision-Mockup.png"
+        link="/DrillVision"
+        borderColor="#242424"
+        textColor="white"
+        className="custom-card-class"
+      />
+    </div>
           <div className="div9">
             <h1>Connect With Me</h1>
             <Popup onOpen={() => setClipboard('al3xbktt@gmail.com')} position={'bottom center'} trigger={<button style={{marginTop: '.75rem',width:"100%"}} className="btn">Copy Email</button>}>
