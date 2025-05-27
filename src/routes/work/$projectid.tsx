@@ -1,26 +1,50 @@
-import '../styles/main.css'
+import '../../styles/main.css'
 import { useEffect } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
 import { faX } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from '@tanstack/react-router'
-import { loadTheme } from '../assets/toggleMode'
-import { projects } from '../data/projects' // <-- Import your projects data
+import { loadTheme } from '../../assets/toggleMode'
+import { projects } from '../../data/projects' 
 import "react-image-gallery/styles/css/image-gallery.css"
 
 // Make the route dynamic
-export const Route = createFileRoute('/work')({
+export const Route = createFileRoute('/work/$projectid')<{
+  params: { projectId: string }
+}>({
   component: Work,
 })
 
 function Work() {
   // Get projectId from route params
-  const { projectId } = Route.useParams()
+  const { projectid } = Route.useParams()
   // Find the project data by id (case-insensitive)
+  type ProjectType = {
+    title: string
+    subtitle: string
+    logo?: string
+    context: string
+    role: string
+    stack: string
+    timeline: string
+    description: string
+    purpose: string
+    images: {
+      main: string
+      secondary: string
+      tertiary: string
+    }
+    problem: string
+    solution: string
+    contributions: string
+    takeaways: { title: string; description: string }[]
+    titleImage?: string
+  }
+
   const project =
-    (projects as Record<string, typeof projects[keyof typeof projects]>)[projectId] ||
-    (projects as Record<string, typeof projects[keyof typeof projects]>)[projectId?.toLowerCase?.()] ||
-    (projects as Record<string, typeof projects[keyof typeof projects]>)[projectId?.toUpperCase?.()]
+    (projects as Record<string, ProjectType>)[projectid] ||
+    (projects as Record<string, ProjectType>)[projectid?.toLowerCase?.()] ||
+    (projects as Record<string, ProjectType>)[projectid?.toUpperCase?.()]
 
   useEffect(() => {
     document.body.setAttribute('data-theme', loadTheme('state') || 'dark')
@@ -45,8 +69,15 @@ function Work() {
         <div className="work-grid">
           {/* Use project data dynamically */}
           <div className="work1">
-            <img src={project.logo} alt={`${project.title} Logo`} />
-            <h1>{project.title}</h1>
+            {project.logo && (
+              <img className="projectImage" src={project.logo} alt={`${project.title} Logo`} />
+            )}
+            {/* Render title as image if titleImage exists, else as text */}
+            {project.titleImage ? (
+              <img className="projectTitle" src={project.titleImage} alt={project.title} style={{ maxHeight: '3rem' }} />
+            ) : (
+              <h1>{project.title}</h1>
+            )}
             <h2>{project.subtitle}</h2>
           </div>
           <div className="work2">

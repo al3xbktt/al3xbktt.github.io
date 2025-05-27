@@ -11,18 +11,12 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as WorkImport } from './routes/work'
 import { Route as GalleryImport } from './routes/gallery'
 import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
+import { Route as WorkProjectidImport } from './routes/work/$projectid'
 
 // Create/Update Routes
-
-const WorkRoute = WorkImport.update({
-  id: '/work/$projectId',
-  path: '/work/$projectId',
-  getParentRoute: () => rootRoute,
-} as any)
 
 const GalleryRoute = GalleryImport.update({
   id: '/gallery',
@@ -39,6 +33,12 @@ const AboutRoute = AboutImport.update({
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const WorkProjectidRoute = WorkProjectidImport.update({
+  id: '/work/$projectid',
+  path: '/work/$projectid',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -67,11 +67,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GalleryImport
       parentRoute: typeof rootRoute
     }
-    '/work': {
-      id: '/work'
-      path: '/work'
-      fullPath: '/work'
-      preLoaderRoute: typeof WorkImport
+    '/work/$projectid': {
+      id: '/work/$projectid'
+      path: '/work/$projectid'
+      fullPath: '/work/$projectid'
+      preLoaderRoute: typeof WorkProjectidImport
       parentRoute: typeof rootRoute
     }
   }
@@ -83,14 +83,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/gallery': typeof GalleryRoute
-  '/work': typeof WorkRoute
+  '/work/$projectid': typeof WorkProjectidRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/gallery': typeof GalleryRoute
-  '/work': typeof WorkRoute
+  '/work/$projectid': typeof WorkProjectidRoute
 }
 
 export interface FileRoutesById {
@@ -98,15 +98,15 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/gallery': typeof GalleryRoute
-  '/work': typeof WorkRoute
+  '/work/$projectid': typeof WorkProjectidRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/gallery' | '/work'
+  fullPaths: '/' | '/about' | '/gallery' | '/work/$projectid'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/gallery' | '/work'
-  id: '__root__' | '/' | '/about' | '/gallery' | '/work'
+  to: '/' | '/about' | '/gallery' | '/work/$projectid'
+  id: '__root__' | '/' | '/about' | '/gallery' | '/work/$projectid'
   fileRoutesById: FileRoutesById
 }
 
@@ -114,14 +114,14 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   GalleryRoute: typeof GalleryRoute
-  WorkRoute: typeof WorkRoute
+  WorkProjectidRoute: typeof WorkProjectidRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   GalleryRoute: GalleryRoute,
-  WorkRoute: WorkRoute,
+  WorkProjectidRoute: WorkProjectidRoute,
 }
 
 export const routeTree = rootRoute
@@ -137,7 +137,7 @@ export const routeTree = rootRoute
         "/",
         "/about",
         "/gallery",
-        "/work"
+        "/work/$projectid"
       ]
     },
     "/": {
@@ -149,8 +149,8 @@ export const routeTree = rootRoute
     "/gallery": {
       "filePath": "gallery.tsx"
     },
-    "/work": {
-      "filePath": "work.tsx"
+    "/work/$projectid": {
+      "filePath": "work/$projectid.tsx"
     }
   }
 }

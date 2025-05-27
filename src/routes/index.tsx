@@ -80,7 +80,7 @@ function Index() {
             <InteractiveCard 
         title="rand.im"
         imageUrl="/images/randim-mockup.png"
-        link="/randim"
+        link="/work/randim"
         borderColor="#242424"
         textColor="white"
         className="custom-card-class"
@@ -90,7 +90,7 @@ function Index() {
             <InteractiveCard 
         title="Portfolio"
         imageUrl="/images/portfolio-mockup.png"
-        link="/Portfolio"
+        link="/work/portfolio"
         borderColor="#242424"
         textColor="white"
         className="custom-card-class"
@@ -135,6 +135,7 @@ function Index() {
           <div className="div7">
             <div className="button-content-container">
             <div className="bcc1"><h1>Design Gallery</h1></div>
+            
             <div className="bcc2">
             <Link to="/gallery"> <FontAwesomeIcon className="link-button" icon={faArrowCircleRight}/></Link>
             </div>
@@ -144,7 +145,7 @@ function Index() {
       <InteractiveCard 
         title="DrillVision"
         imageUrl="/images/DrillVision-Mockup.png"
-        link="/DrillVision"
+        link="/work/DrillVision"
         borderColor="#242424"
         textColor="white"
         className="custom-card-class"

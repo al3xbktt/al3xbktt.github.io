@@ -748,6 +748,7 @@ grid-template-areas:
   font-weight:800;
 }
 
+
 .work1 { 
   grid-area: work1; 
   background-color: var(--color-fg);
@@ -760,11 +761,15 @@ grid-template-areas:
   display:inline-block;
   height:fit-content;
 }
-.work1 img{
+.projectImage{
 width:100px;
 float:right;
 vertical-align: middle;
 }
+.projectTitle{
+  padding-top:.5rem;
+}
+
 .work2 {
    grid-area: work2; 
    background-color: var(--color-fg);
