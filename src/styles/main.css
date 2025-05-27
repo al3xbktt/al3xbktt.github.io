@@ -501,7 +501,6 @@ grid-template-areas:
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(13.7px);
   -webkit-backdrop-filter: blur(13.7px);
-
 }
 
 .about4 li{
@@ -706,6 +705,175 @@ logo-grid img {
   -webkit-backdrop-filter: blur(13.7px); 
 }
 
+.work-container{
+    justify-self:center;
+    padding:5rem;
+    display: flex;
+    justify-content: center;
+    min-height: 85vh;
+    width:55vw;
+}
+
+.work-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr),;
+grid-template-rows: fit-content(40%) fit-content(40%) 1fr;
+grid-column-gap: 1rem;
+grid-row-gap: 1rem;
+grid-template-areas:
+"work1 work1 work1"
+"work2 work3 work3"
+"work2 work3 work3"
+"work4 work4 work4"
+"work5 work5 work5"
+"work6 work6 work6"
+"work7 work7 work7"
+"work8 work8 work8"
+"work9 work9 work9"
+"work10 work10 work10";
+
+}
+.work-grid h1{
+  font-size: clamp(1rem, 2rem, 2rem);
+  font-weight:700;
+}
+
+.work-grid h2{
+  font-size: clamp(1rem, 1.5rem, 1.5rem);
+  font-weight:400;
+}
+
+.work-grid h4{
+  font-size: clamp(1rem, 1.2rem, 1.2rem);
+  font-weight:800;
+}
+
+.work1 { 
+  grid-area: work1; 
+  background-color: var(--color-fg);
+  border-radius: 31px;
+  padding: 20px;
+  border: 1px solid var(--color-outline);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(13.7px);
+  -webkit-backdrop-filter: blur(13.7px);
+  display:inline-block;
+  height:fit-content;
+}
+.work2 {
+   grid-area: work2; 
+   background-color: var(--color-fg);
+   border-radius: 31px;
+   padding: 20px;
+   border: 1px solid var(--color-outline);
+   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+   backdrop-filter: blur(13.7px);
+   -webkit-backdrop-filter: blur(13.7px);
+}
+.work3 {
+   grid-area: work3;
+   background-color: var(--color-fg);
+   border-radius: 31px;
+   padding: 20px;
+   border: 1px solid var(--color-outline);
+   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+   backdrop-filter: blur(13.7px);
+   -webkit-backdrop-filter: blur(13.7px);   
+   }
+.work4 { 
+   grid-area: work4; 
+   background-color: var(--color-fg);
+   border-radius: 31px;
+   border: 1px solid var(--color-outline);
+   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+   backdrop-filter: blur(13.7px);
+   -webkit-backdrop-filter: blur(13.7px);
+}
+
+.work4 img {
+  height: 100%;
+  width: 100%;
+  border-radius: 31px;
+  position:relative;
+  object-fit: cover;
+}
+  
+.work5 { 
+   grid-area: work5; 
+   background-color: var(--color-fg);
+   border-radius: 31px;
+   padding: 20px;
+   border: 1px solid var(--color-outline);
+   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+   backdrop-filter: blur(13.7px);
+   -webkit-backdrop-filter: blur(13.7px);
+}
+.work6 { 
+   grid-area: work6; 
+   background-color: var(--color-fg);
+   border-radius: 31px;
+   border: 1px solid var(--color-outline);
+   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+   backdrop-filter: blur(13.7px);
+   -webkit-backdrop-filter: blur(13.7px);
+}
+.work6 img {
+  height: 100%;
+  width: 100%;
+  border-radius: 31px;
+  position:relative;
+  object-fit: cover;
+}
+  
+.work7 { 
+   grid-area: work7; 
+   background-color: var(--color-fg);
+   border-radius: 31px;
+   padding: 20px;
+   border: 1px solid var(--color-outline);
+   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+   backdrop-filter: blur(13.7px);
+   -webkit-backdrop-filter: blur(13.7px);
+}
+.work8 { 
+   grid-area: work8; 
+   background-color: var(--color-fg);
+   border-radius: 31px;
+   padding: 20px;
+   border: 1px solid var(--color-outline);
+   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+   backdrop-filter: blur(13.7px);
+   -webkit-backdrop-filter: blur(13.7px);
+}
+
+.work9 { 
+   grid-area: work9; 
+   background-color: var(--color-fg);
+   border-radius: 31px;
+   border: 1px solid var(--color-outline);
+   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+   backdrop-filter: blur(13.7px);
+   -webkit-backdrop-filter: blur(13.7px);
+}
+.work9 img {
+  height: 100%;
+  width: 100%;
+  border-radius: 31px;
+  position:relative;
+  object-fit: cover;
+}
+  
+.work10 { 
+   grid-area: work10; 
+   background-color: var(--color-fg);
+   border-radius: 31px;
+   padding: 20px;
+   border: 1px solid var(--color-outline);
+   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+   backdrop-filter: blur(13.7px);
+   -webkit-backdrop-filter: blur(13.7px);
+}
+
 @media(max-width: 1200px) {
     .parent {
       grid-template-areas: 
@@ -787,7 +955,6 @@ logo-grid img {
         "div5 div6"  
         "div4 div4"
         "div8 div8"
-        "div2 div3"
         "div11 div11"
         "div7 div7"
         "div10 div10"        
@@ -834,9 +1001,9 @@ logo-grid img {
         "div6"
         "div5"
         "div4"
+        "div8"
         "div2"
         "div3"
-        "div8"
         "div11"
         "div7"
         "div10"
