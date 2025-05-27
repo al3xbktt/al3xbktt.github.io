@@ -760,6 +760,11 @@ grid-template-areas:
   display:inline-block;
   height:fit-content;
 }
+.work1 img{
+width:100px;
+float:right;
+vertical-align: middle;
+}
 .work2 {
    grid-area: work2; 
    background-color: var(--color-fg);
@@ -872,6 +877,10 @@ grid-template-areas:
    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
    backdrop-filter: blur(13.7px);
    -webkit-backdrop-filter: blur(13.7px);
+}
+
+.work10 li{
+  padding: 0.3rem;
 }
 
 @media(max-width: 1200px) {

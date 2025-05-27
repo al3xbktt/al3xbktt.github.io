@@ -19,8 +19,8 @@ import { Route as IndexImport } from './routes/index'
 // Create/Update Routes
 
 const WorkRoute = WorkImport.update({
-  id: '/work',
-  path: '/work',
+  id: '/work/$projectId',
+  path: '/work/$projectId',
   getParentRoute: () => rootRoute,
 } as any)
 
